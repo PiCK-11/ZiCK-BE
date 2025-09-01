@@ -1,22 +1,48 @@
-package com.pick.zick.global.security;
+package com.pick.zick.global.security.userdetails;
 
 import com.pick.zick.domain.user.entity.User;
-import com.pick.zick.domain.user.repository.UserRepository; // ← 네 구조에 맞춰 import
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
-public class SecurityUserDetailsService implements UserDetailsService {
+import java.util.Collection;
+import java.util.Collections;
 
-    private final UserRepository userRepository;
+@Getter
+@AllArgsConstructor
+public class SecurityUserDetails implements UserDetails {
+
+    private final String userId;
+    private final String password;
+    private final String name;
+    private final String role;
+
+    public static SecurityUserDetails from(User u) {
+        if (u.getRole() == null) {
+            throw new IllegalStateException("role이 비어있습니다: " + u.getUserId());
+        }
+        return new SecurityUserDetails(
+                u.getUserId(),
+                u.getPassword(),
+                u.getName(),
+                u.getRole().name()
+        );
+    }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User u = userRepository.findById(username)
-                .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + username));
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        if (role == null || role.isBlank()) {
+            return Collections.emptyList();
+        }
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role));
+    }
 
-        return SecurityUserDetails.from(u);
+    @Override public String getPassword() { return password; }
+    @Override public String getUsername() { return userId; }
+    @Override public boolean isAccountNonExpired() { return true; }
+    @Override public boolean isAccountNonLocked() { return true; }
+    @Override public boolean isCredentialsNonExpired() { return true; }
+    @Override public boolean isEnabled() { return true; }
+}
