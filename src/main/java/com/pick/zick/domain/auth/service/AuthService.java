@@ -36,6 +36,7 @@ public class AuthService {
                 .userId(req.userId())
                 .name(req.name())
                 .password(passwordEncoder.encode(req.password()))
+                .role(User.Role.STUDENT)
                 .build();
         userRepository.save(user);
 

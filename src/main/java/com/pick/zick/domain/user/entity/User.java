@@ -1,7 +1,6 @@
 package com.pick.zick.domain.user.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,5 +16,13 @@ public class User {
     private String userId;   // PK
     private String name;
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+    public enum Role {
+        STUDENT, CAFETERIA
+    }
 }
 
