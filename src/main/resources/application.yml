@@ -22,7 +22,7 @@ spring:
     type: redis
 
 jwt:
-  key: ${JWT_SECRET_KEY:rkGU45258GGhiolLO2465TFY5345kGU45258GGhiolLO2465TFY5345}
+  key: ${JWT_SECRET_KEY:6lwE5Rsfk1rxL6wo2e03kpVbv5mFOsZ04fHHcVwR5J0=}
   accessExp: ${JWT_ACCESS_EXP:60000} #JWT 만료 시간
 
 server:
