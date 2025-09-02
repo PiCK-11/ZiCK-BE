@@ -27,9 +27,6 @@ replay_pid*
 
 .idea/
 
-# IntelliJ
-.idea/*
-!.idea/modules.xml
-!.idea/vcs.xml
-!.idea/runConfigurations/
+# IntelliJ IDEA
+.idea/
 *.iml
