@@ -1,21 +1,20 @@
 package com.pick.zick.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
 @Builder
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Table(name = "users")
 public class User {
     @Id
     private String userId;   // PK
     private String name;
     private String password;
+    private Integer studentNumber;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -23,6 +22,11 @@ public class User {
 
     public enum Role {
         STUDENT, CAFETERIA
+    }
+
+    public void updateProfile(String name, Integer studentNumber) {
+        if (name != null && !name.isBlank()) this.name = name;
+        if (studentNumber != null) this.studentNumber = studentNumber;
     }
 }
 
