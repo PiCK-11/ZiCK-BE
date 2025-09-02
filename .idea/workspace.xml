@@ -5,13 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d166d14-1353-4499-8b49-1b45c7321d63" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presistence/request/UpdateUserRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/user/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/SecurityUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/userdetails/SecurityUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/userdetails/SecurityUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presentation/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presistence/request/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presistence/response/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/dto/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presistence/request/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/dto/SignupResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presistence/response/SignupResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/auth/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/controller/AttendanceExportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/controller/CafeteriaMainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/controller/QrScanController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/dto/MealAttendanceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/dto/QrIssueRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/entity/MealApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/entity/MealAttendance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/service/MealAttendanceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/cafeteria/service/QrService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/student/controller/QrDisplayController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/student/controller/StudentMainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/student/dto/StudentInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/student/entity/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/student/repository/StudentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/student/service/StudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/presentation/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/user/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/common/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/common/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/common/DateUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/common/PasswordPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/domain/PasswordPolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/config/JpaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/JpaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/exception/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/exception/PasswordNotMatchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/exception/PasswordNotMatchException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/exception/PasswordPolicyViolationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/exception/PasswordPolicyViolationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/exception/UserIdAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/exception/UserIdAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/JwtProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/userdetails/SecurityUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/userdetails/SecurityUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/global/security/userdetails/SecurityUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pick/zick/config/userdetails/SecurityUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/infra/external/SchoolApiClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pick/zick/infra/s3/S3Uploader.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +158,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pick/zick/presentation/controller/UserController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
