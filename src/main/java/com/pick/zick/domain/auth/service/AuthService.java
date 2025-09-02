@@ -44,7 +44,7 @@ public class AuthService {
         String token = jwtProvider.generateToken(user.getUserId());
 
         // 5) 응답
-        return SignupResponse.ok(user.getUserId());
+        return SignupResponse.ok(user.getUserId(), token);
     }
 
     /** 로그인 **/
