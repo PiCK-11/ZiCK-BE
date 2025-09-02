@@ -1,4 +1,4 @@
-package com.pick.zick.peristence.request;
+package com.pick.zick.domain.auth.dto.request;
 
 import jakarta.validation.constraints.*;
 
@@ -19,5 +19,9 @@ public record SignupRequest(
         String password,
 
         @NotBlank(message = "비밀번호 재확인은 필수입니다.")
-        String confirmPassword
+        String confirmPassword,
+
+        @NotBlank(message = "학번은 필수입니다.")
+        @Pattern(regexp = "^[0-9]{4,10}$", message = "학번은 숫자 4~10자리여야 합니다.")
+        String studentNumber
 ) {}
