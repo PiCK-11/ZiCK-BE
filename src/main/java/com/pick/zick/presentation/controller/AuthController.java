@@ -1,7 +1,7 @@
 package com.pick.zick.presentation.controller;
 
-import com.pick.zick.presistence.request.LoginRequest;
-import com.pick.zick.presistence.response.LoginResponse;
+import com.pick.zick.peristence.request.LoginRequest;
+import com.pick.zick.peristence.response.LoginResponse;
 import com.pick.zick.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

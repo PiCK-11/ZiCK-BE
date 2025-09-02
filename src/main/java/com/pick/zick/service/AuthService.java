@@ -1,9 +1,9 @@
 package com.pick.zick.service;
 
-import com.pick.zick.presistence.request.SignupRequest;
-import com.pick.zick.presistence.response.SignupResponse;
-import com.pick.zick.presistence.request.LoginRequest;
-import com.pick.zick.presistence.response.LoginResponse;
+import com.pick.zick.peristence.request.SignupRequest;
+import com.pick.zick.peristence.response.SignupResponse;
+import com.pick.zick.peristence.request.LoginRequest;
+import com.pick.zick.peristence.response.LoginResponse;
 import com.pick.zick.domain.entity.User;
 import com.pick.zick.domain.repository.UserRepository;
 import com.pick.zick.config.JwtProvider;

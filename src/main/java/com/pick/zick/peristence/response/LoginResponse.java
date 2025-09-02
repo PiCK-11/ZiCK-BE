@@ -1,4 +1,4 @@
-package com.pick.zick.presistence.response;
+package com.pick.zick.peristence.response;
 
 public record LoginResponse(String userId, String accessToken, String message) {
 

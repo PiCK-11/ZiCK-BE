@@ -1,4 +1,4 @@
-package com.pick.zick.presistence.request;
+package com.pick.zick.peristence.request;
 
 import jakarta.validation.constraints.*;
 

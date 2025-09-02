@@ -1,4 +1,4 @@
-package com.pick.zick.presistence.response;
+package com.pick.zick.peristence.response;
 
 public record SignupResponse(String userId, String message) {
     public static SignupResponse ok(String id){
