@@ -19,6 +19,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtTokenProvider tokenProvider;
     private final SecurityUserDetailsService userDetailsService;
+    private final TokenBlacklist tokenBlacklist;
 
     private static final String[] WHITE_LIST = {
             "/auth/login",
@@ -50,7 +51,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String token = tokenProvider.resolveToken(request);
 
-        if (token != null && tokenProvider.validateToken(token)) {
+        if (token != null && tokenProvider.validateToken(token) && !tokenBlacklist.isBlacklisted(token)) {
             String userId = tokenProvider.getUserId(token);
 
             SecurityUserDetails user =

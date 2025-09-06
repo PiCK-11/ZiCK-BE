@@ -87,4 +87,15 @@ public class JwtTokenProvider {
         }
         return null;
     }
+
+    public long getRemainingValidityMillis(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        long exp = claims.getExpiration().getTime();
+        long now = System.currentTimeMillis();
+        return Math.max(exp - now, 0L);
+    }
 }

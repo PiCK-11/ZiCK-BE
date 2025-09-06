@@ -1,12 +1,16 @@
 package com.pick.zick.domain.auth.service;
 
 import com.pick.zick.domain.auth.dto.request.SignupRequest;
+import com.pick.zick.domain.auth.dto.response.LogoutResponse;
 import com.pick.zick.domain.auth.dto.response.SignupResponse;
 import com.pick.zick.domain.auth.dto.request.LoginRequest;
 import com.pick.zick.domain.auth.dto.response.LoginResponse;
 import com.pick.zick.domain.user.persistence.entity.User;
 import com.pick.zick.domain.user.persistence.repository.UserRepository;
 import com.pick.zick.global.security.jwt.JwtTokenProvider;
+import com.pick.zick.global.security.jwt.TokenBlacklist;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,6 +22,7 @@ public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtProvider;
+    private final TokenBlacklist tokenBlacklist;
 
     /** 회원가입**/
     public SignupResponse signup(SignupRequest req) {
@@ -63,5 +68,14 @@ public class AuthService {
 
         // 4) 응답
         return LoginResponse.ok(user.getUserId(), token);
+    }
+
+    public LogoutResponse logout(HttpServletRequest request) {
+        String token = jwtProvider.resolveToken(request);
+        if(token != null && jwtProvider.validateToken(token)) {
+            long ttl = jwtProvider.getRemainingValidityMillis(token);
+            tokenBlacklist.blacklist(token, ttl);
+        }
+        return LogoutResponse.ok();
     }
 }
