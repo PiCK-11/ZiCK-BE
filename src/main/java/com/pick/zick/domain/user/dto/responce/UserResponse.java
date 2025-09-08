@@ -2,7 +2,7 @@ package com.pick.zick.domain.user.dto.responce;
 
 public record UserResponse(
         String userId,
-        String name,
+        String userName,
         Integer studentNumber
 ) {
 }

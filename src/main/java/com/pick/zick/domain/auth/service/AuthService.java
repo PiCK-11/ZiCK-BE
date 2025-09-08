@@ -39,7 +39,7 @@ public class AuthService {
         // 3) 저장
         User user = User.builder()
                 .userId(req.userId())
-                .name(req.name())
+                .userName(req.userName())
                 .password(passwordEncoder.encode(req.password()))
                 .role(User.Role.STUDENT)
                 .build();

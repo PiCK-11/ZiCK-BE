@@ -20,8 +20,8 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
 
-        user.updateProfile(req.name(), req.studentNumber());
+        user.updateProfile(req.userName(), req.studentNumber());
 
-        return new UserResponse(user.getUserId(), user.getName(), user.getStudentNumber());
+        return new UserResponse(user.getUserId(), user.getUserName(), user.getStudentNumber());
     }
 }

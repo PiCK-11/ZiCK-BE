@@ -12,7 +12,7 @@ import lombok.*;
 public class User {
     @Id
     private String userId;   // PK
-    private String name;
+    private String userName;
     private String password;
     private Integer studentNumber;
 
@@ -24,8 +24,8 @@ public class User {
         STUDENT, CAFETERIA
     }
 
-    public void updateProfile(String name, Integer studentNumber) {
-        if (name != null && !name.isBlank()) this.name = name;
+    public void updateProfile(String userName, Integer studentNumber) {
+        if (userName != null && !userName.isBlank()) this.userName = userName;
         if (studentNumber != null) this.studentNumber = studentNumber;
     }
 }

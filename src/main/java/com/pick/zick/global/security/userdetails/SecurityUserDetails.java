@@ -26,7 +26,7 @@ public class SecurityUserDetails implements UserDetails {
         return new SecurityUserDetails(
                 u.getUserId(),
                 u.getPassword(),
-                u.getName(),
+                u.getUserName(),
                 u.getRole().name()
         );
     }
