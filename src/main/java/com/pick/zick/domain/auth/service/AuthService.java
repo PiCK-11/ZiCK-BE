@@ -70,12 +70,11 @@ public class AuthService {
         return LoginResponse.ok(user.getUserId(), token);
     }
 
-    public LogoutResponse logout(HttpServletRequest request) {
+    public void logout(HttpServletRequest request) {
         String token = jwtProvider.resolveToken(request);
-        if(token != null && jwtProvider.validateToken(token)) {
+        if (token != null && jwtProvider.validateToken(token)) {
             long ttl = jwtProvider.getRemainingValidityMillis(token);
             tokenBlacklist.blacklist(token, ttl);
         }
-        return LogoutResponse.ok();
     }
 }

@@ -4,6 +4,7 @@ import com.pick.zick.domain.auth.dto.request.LoginRequest;
 import com.pick.zick.domain.auth.dto.response.LoginResponse;
 import com.pick.zick.domain.auth.service.AuthService;
 import jakarta.validation.Valid;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,8 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<LogoutResponse> logout(HttpServletRequest req) {
-        return ResponseEntity.ok(authService.logout(req));
+    public ResponseEntity<Void> logout(HttpServletRequest req) {
+        authService.logout(req);
+        return ResponseEntity.noContent().build();
     }
 }
