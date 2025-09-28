@@ -22,6 +22,6 @@ public class UserService {
 
         user.updateProfile(req.userName(), req.studentNumber());
 
-        return new UserResponse(user.getUserId(), user.getUserName(), user.getStudentNumber(), user.isMealApplied());
+        return new UserResponse(user.getUserId(), user.getUserName(), user.getStudentNumber(), user.isVerifield());
     }
 }

@@ -47,6 +47,7 @@ public class AuthService {
                 .password(passwordEncoder.encode(req.password()))
                 .role(forcedRole)
                 .studentNumber(req.studentNumber())
+                .verifield(false)
                 .build();
         userRepository.save(user);
 
@@ -54,7 +55,7 @@ public class AuthService {
         String token = jwtProvider.generateToken(user.getUserId());
 
         // 5) 응답
-        return SignupResponse.ok(user.getUserId(), token, forcedRole);
+        return SignupResponse.ok(user.getUserId(), token, forcedRole, user.isVerifield());
     }
 
     /** 로그인 **/

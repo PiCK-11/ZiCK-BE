@@ -22,7 +22,7 @@ public class User {
 
     @Builder.Default
     @Column(nullable = false)
-    private boolean mealApplied = false;
+    private boolean verifield = false;
 
     public enum Role { STUDENT, CAFETERIA }
 
