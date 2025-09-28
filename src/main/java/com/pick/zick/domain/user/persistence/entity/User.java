@@ -20,9 +20,11 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
-    public enum Role {
-        STUDENT, CAFETERIA
-    }
+    @Builder.Default
+    @Column(nullable = false)
+    private boolean mealApplied = false;
+
+    public enum Role { STUDENT, CAFETERIA }
 
     public void updateProfile(String userName, Integer studentNumber) {
         if (userName != null && !userName.isBlank()) this.userName = userName;

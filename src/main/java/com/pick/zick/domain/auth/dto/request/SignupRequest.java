@@ -1,6 +1,7 @@
 package com.pick.zick.domain.auth.dto.request;
 
 import jakarta.validation.constraints.*;
+import com.pick.zick.domain.user.persistence.entity.User.Role;
 
 public record SignupRequest(
         @Pattern(regexp = "^[A-Za-z0-9]{1,16}$",
@@ -23,5 +24,7 @@ public record SignupRequest(
 
         @NotBlank(message = "학번은 필수입니다.")
         @Pattern(regexp = "^[0-9]{4,10}$", message = "학번은 숫자 4~10자리여야 합니다.")
-        String studentNumber
+        Integer studentNumber,
+
+        com.pick.zick.domain.user.persistence.entity.User.Role role
 ) {}

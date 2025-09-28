@@ -1,7 +1,6 @@
 package com.pick.zick.domain.auth.service;
 
 import com.pick.zick.domain.auth.dto.request.SignupRequest;
-import com.pick.zick.domain.auth.dto.response.LogoutResponse;
 import com.pick.zick.domain.auth.dto.response.SignupResponse;
 import com.pick.zick.domain.auth.dto.request.LoginRequest;
 import com.pick.zick.domain.auth.dto.response.LoginResponse;
@@ -10,7 +9,6 @@ import com.pick.zick.domain.user.persistence.repository.UserRepository;
 import com.pick.zick.global.security.jwt.JwtTokenProvider;
 import com.pick.zick.global.security.jwt.TokenBlacklist;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -36,12 +34,19 @@ public class AuthService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다");
         }
 
+        //롤별 필드
+        User.Role forcedRole = User.Role.STUDENT;
+        if (req.role() != null && req.role() != User.Role.STUDENT) {
+            throw new IllegalArgumentException("현재는 학생만 회원가입할 수 있습니다");
+        } //cafeteria 가입 시도 시 400
+
         // 3) 저장
         User user = User.builder()
                 .userId(req.userId())
                 .userName(req.userName())
                 .password(passwordEncoder.encode(req.password()))
-                .role(User.Role.STUDENT)
+                .role(forcedRole)
+                .studentNumber(req.studentNumber())
                 .build();
         userRepository.save(user);
 
@@ -49,7 +54,7 @@ public class AuthService {
         String token = jwtProvider.generateToken(user.getUserId());
 
         // 5) 응답
-        return SignupResponse.ok(user.getUserId(), token);
+        return SignupResponse.ok(user.getUserId(), token, forcedRole);
     }
 
     /** 로그인 **/

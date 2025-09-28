@@ -1,0 +1,30 @@
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST} #redis 서버 주소
+      port: ${REDIS_PORT} #기본 포트
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+    database: mysql
+
+  cache:
+    type: redis
+
+jwt:
+  key: ${JWT_SECRET_KEY}
+  accessExp: ${JWT_ACCESS_EXP:60000} #JWT 만료 시간
+
+server:
+  servlet:
+    context-path: /zick
