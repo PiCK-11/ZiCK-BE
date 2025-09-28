@@ -72,7 +72,7 @@ public class AuthService {
         String token = jwtProvider.generateToken(user.getUserId());
 
         // 4) 응답
-        return LoginResponse.ok(user.getUserId(), token);
+        return LoginResponse.ok(user.getUserId(), token, user.getRole());
     }
 
     public void logout(HttpServletRequest request) {
