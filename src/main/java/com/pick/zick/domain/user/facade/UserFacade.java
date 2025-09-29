@@ -1,6 +1,7 @@
 package com.pick.zick.domain.user.facade;
 
 import com.pick.zick.domain.user.entity.User;
+import com.pick.zick.domain.user.exception.UserNotFoundException;
 import com.pick.zick.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,10 +14,10 @@ public class UserFacade {
 
     public User getCurrentUser() {
         String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        return
+        return getUserById(userId);
     }
 
     public User getUserById(String userId) {
-        return userRepository.findById(userId).orElse(() -> );
+        return userRepository.findById(userId).orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
 }
