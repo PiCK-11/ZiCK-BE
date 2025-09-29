@@ -4,7 +4,7 @@ import com.pick.zick.domain.auth.dto.SignupRequest;
 import com.pick.zick.domain.auth.dto.SignupResponse;
 import com.pick.zick.domain.auth.dto.LoginRequest;
 import com.pick.zick.domain.auth.dto.LoginResponse;
-import com.pick.zick.domain.user.domain.User;
+import com.pick.zick.domain.user.entity.User;
 import com.pick.zick.domain.user.repository.UserRepository;
 import com.pick.zick.global.security.JwtProvider;
 import lombok.RequiredArgsConstructor;

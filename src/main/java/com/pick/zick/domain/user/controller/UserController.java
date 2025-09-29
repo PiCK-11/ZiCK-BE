@@ -1,6 +1,6 @@
 package com.pick.zick.domain.user.controller;
 
-import com.pick.zick.domain.user.domain.User;
+import com.pick.zick.domain.user.entity.User;
 import com.pick.zick.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.pick.zick.domain.user.domain;
+package com.pick.zick.domain.user.entity;
 
 public enum Role {
     STUDENT,
