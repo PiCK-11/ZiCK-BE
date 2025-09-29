@@ -32,5 +32,7 @@ public class User {
     @Column(nullable = false)
     private String verified;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
 
