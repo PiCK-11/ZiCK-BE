@@ -19,7 +19,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String loginId;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String userName;
 
     @Column(nullable = false)
@@ -43,8 +43,6 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.studentNumber = studentNumber;
-        this.applied = applied;
-        this.verified = verified;
         this.role = Role.valueOf(role);
     }
 }

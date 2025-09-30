@@ -14,9 +14,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDateTime;
-
-
 @Component
 @RequiredArgsConstructor
 public class JwtProvider {
@@ -27,7 +24,6 @@ public class JwtProvider {
 
     public TokenResponse generateToken(String id, String role) {
         String accessToken = generateToken(id, ACCESS_TOKEN, role, jwtProperty.getAccessExp());
-        LocalDateTime accessExpiredAt = LocalDateTime.now().withNano(0).plusSeconds(jwtProperty.getAccessExp());
 
         return new TokenResponse(accessToken,jwtProperty.getPrefix(),"200" );
     }
@@ -46,12 +42,12 @@ public class JwtProvider {
     }
 
     public String resolveToken(HttpServletRequest request) {
-        String token = request.getHeader(jwtProperty.getHeader());
-        if (token != null && token.startsWith(jwtProperty.getPrefix()) && token.length() > jwtProperty.getPrefix().length() + 1) {
-            return token.substring(jwtProperty.getPrefix().length() + 1);
-        } else {
+//        String token = request.getHeader(jwtProperty.getHeader());
+//        if (token != null && token.startsWith(jwtProperty.getPrefix()) && token.length() > jwtProperty.getPrefix().length() + 1) {
+//            return token.substring(jwtProperty.getPrefix().length() + 1);
+//        } else {
             return null;
-        }
+//        }
     }
 
     public boolean validToken(String token) {
