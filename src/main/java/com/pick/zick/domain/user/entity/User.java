@@ -38,7 +38,7 @@ public class User {
     private Role role;
 
     @Builder
-    public User(String loginId, String userName, String password, String studentNumber, Boolean applied, Boolean verified, String role) {
+    public User(String loginId, String userName, String password, String studentNumber, String role) {
         this.loginId = loginId;
         this.userName = userName;
         this.password = password;

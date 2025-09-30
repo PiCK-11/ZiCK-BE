@@ -4,7 +4,6 @@ import com.pick.zick.domain.user.entity.Role;
 import com.pick.zick.domain.user.entity.User;
 import com.pick.zick.domain.user.exception.UserNotFoundException;
 import com.pick.zick.domain.user.repository.UserRepository;
-import com.pick.zick.global.security.JwtProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;

@@ -9,10 +9,11 @@ import com.pick.zick.domain.user.persistence.dto.response.MyPageResponse;
 import com.pick.zick.domain.user.persistence.dto.response.StudentMyPageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GetUserService {
+public class GetMyPageService {
     private final UserFacade userFacade;
 
     public MyPageResponse getMyPage(){

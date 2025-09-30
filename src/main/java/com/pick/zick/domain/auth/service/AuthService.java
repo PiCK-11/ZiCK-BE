@@ -30,7 +30,7 @@ public class AuthService {
         User user = User.builder()
                 .loginId(req.loginId())
                 .userName(req.userName())
-                .studentNumber(req.studentNumeber())
+                .studentNumber(req.studentNumber())
                 .role(req.role())
                 .password(passwordEncoder.encode(req.password()))
                 .build();
