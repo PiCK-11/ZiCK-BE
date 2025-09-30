@@ -34,7 +34,7 @@ public class User {
     private Boolean applied;
 
     @Column(nullable = false)
-    private String verified;
+    private Boolean verified;
 
     @Enumerated(EnumType.STRING)
     private Role role;

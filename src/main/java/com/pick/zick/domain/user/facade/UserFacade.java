@@ -15,19 +15,20 @@ public class UserFacade {
     private final UserRepository userRepository;
     private final JwtProvider jwtProvider;
 
-    public Role getRoleFromJwt(String token) {
-        String loginId = jwtProvider.getLoginId(token);
-        return userRepository.findByLoginId(loginId)
-                .map(User::getRole)
-                .orElseThrow(() -> UserNotFoundException.EXCEPTION);
+    private String getCurrentLoginId() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+
+    public Role getRole() {
+        return getCurrentUser().getRole();
     }
 
     public User getCurrentUser() {
-        String loginId = SecurityContextHolder.getContext().getAuthentication().getName();
-        return getUserByLoginId(loginId);
+        return getUserByLoginId(getCurrentLoginId());
     }
 
     public User getUserByLoginId(String loginId) {
-        return userRepository.findById(loginId).orElseThrow(() -> UserNotFoundException.EXCEPTION);
+        return userRepository.findByLoginId(loginId)
+                .orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
 }
