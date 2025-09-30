@@ -1,16 +1,49 @@
-# Compiled class file
+# IntelliJ IDEA / JetBrains IDEs
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/mongoSettings.xml
+.idea/**/replstate.xml
+.idea/**/sonarlint/
+.idea/**/sonarIssues.xml
+.idea/**/markdown-navigator*
+.idea/$CACHE_FILE$
+.idea/httpRequests
+.idea/codestream.xml
+.idea/caches/build_file_checksums.ser
+
+# IntelliJ project files
+*.iws
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# CMake
+cmake-build-*/
+
+# Android / Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Java
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,11 +51,14 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-replay_pid*
 
-.idea/libraries/
+# Gradle
+.gradle
+build/
+**/build/
+gradle-app.setting
+.gradletasknamecache
 
-.idea/
+# Do not ignore Gradle wrapper jar
+!gradle-wrapper.jar
