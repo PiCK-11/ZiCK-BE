@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
-    boolean existsByUserId(String userId); // userId 기준으로 중복 체크
+    boolean existsByLoginId(String loginId); // userId 기준으로 중복 체크
     Optional<User> findByLoginId(String loginId);
 }
 

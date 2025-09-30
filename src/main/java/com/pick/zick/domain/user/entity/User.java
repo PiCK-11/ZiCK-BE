@@ -10,16 +10,14 @@ import org.hibernate.annotations.DynamicUpdate;
 @Getter
 @NoArgsConstructor
 @DynamicUpdate
+@Table(name = "tbl_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id; // PK
+    private Long id; // PK
 
     @Column(nullable = false, unique = true)
     private String loginId;
-
-    @Column(nullable = false, unique = true)
-    private String name;
 
     @Column(nullable = false, unique = true)
     private String userName;
@@ -31,18 +29,18 @@ public class User {
     private String studentNumber;
 
     @Column(nullable = false)
-    private Boolean applied;
+    private Boolean applied = false;
 
     @Column(nullable = false)
-    private Boolean verified;
+    private Boolean verified = false;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
     @Builder
-    public User(String loginId, String name, String password) {
+    public User(String loginId, String userName, String password) {
         this.loginId = loginId;
-        this.name = name;
+        this.userName = userName;
         this.password = password;
     }
 }

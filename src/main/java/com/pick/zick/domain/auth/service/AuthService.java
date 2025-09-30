@@ -34,7 +34,7 @@ public class AuthService {
         // 3) 저장
         User user = User.builder()
                 .loginId(req.userId())
-                .name(req.name())
+                .userName(req.name())
                 .password(passwordEncoder.encode(req.password()))
                 .build();
         userRepository.save(user);
