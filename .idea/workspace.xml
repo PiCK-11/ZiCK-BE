@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d166d14-1353-4499-8b49-1b45c7321d63" name="Changes" comment="" />
+    <list default="true" id="6d166d14-1353-4499-8b49-1b45c7321d63" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="7b505f7c-1917-4a39-b2f5-3a2a5517df12" name="Changes by byeondohwi" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +22,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -36,6 +43,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Dockerfile" />
         <option value="Class" />
       </list>
     </option>
@@ -67,9 +78,9 @@
   <component name="ProjectId" id="31A5cDumLCYGRorwBuYvJbHlU9n" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build zick.executor": "Run",
@@ -93,10 +104,47 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build ZiCK-BE.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build zick.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ZickApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature/마이페이지&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/backend/ZiCK-BE&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsDialog.application.dockerConsole&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> ca2a15ff98bc7f2ed0db745c6f57ae0788989480
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="ZickApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="DB_PASSWORD" value="1210" />
+        <env name="DB_URL" value="jdbc:mysql://localhost:3306/main_zick" />
+        <env name="DB_USERNAME" value="root" />
+        <env name="JWT_ACCESS_EXP" value="60000" />
+        <env name="JWT_SECRET_KEY" value="rkGU45258GGhiolLO2465TFY5345kGU45258GGhiolLO2465TFY5345" />
+        <env name="REDIS_HOST" value="localhost" />
+        <env name="REDIS_PORT" value="6379" />
+        <env name="HEADER" value="Authorization" />
+        <env name="PREFIX" value="Bearer" />
+      </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="zick.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.pick.zick.ZickApplication" />
@@ -127,13 +175,16 @@
       <workItem from="1755856734024" duration="3149000" />
       <workItem from="1755868785696" duration="738000" />
       <workItem from="1755872226816" duration="377000" />
-      <workItem from="1759124746016" duration="159000" />
+      <workItem from="1759124746016" duration="7559000" />
+      <workItem from="1759224293361" duration="19440000" />
+      <workItem from="1759247048494" duration="377000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -156,6 +207,17 @@
         </entry>
       </map>
     </option>
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> ca2a15ff98bc7f2ed0db745c6f57ae0788989480
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

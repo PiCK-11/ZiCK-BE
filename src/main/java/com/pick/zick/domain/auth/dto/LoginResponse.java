@@ -1,6 +1,6 @@
 package com.pick.zick.domain.auth.dto;
 
-public record LoginResponse(String userId, String accessToken, String message) {
+public record LoginResponse(String loginId, String accessToken, String message) {
 
     public static LoginResponse ok(String id, String token){
         return new LoginResponse(id, token, "로그인에 성공했습니다.");
