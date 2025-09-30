@@ -38,10 +38,14 @@ public class User {
     private Role role;
 
     @Builder
-    public User(String loginId, String userName, String password) {
+    public User(String loginId, String userName, String password, String studentNumber, Boolean applied, Boolean verified, String role) {
         this.loginId = loginId;
         this.userName = userName;
         this.password = password;
+        this.studentNumber = studentNumber;
+        this.applied = applied;
+        this.verified = verified;
+        this.role = Role.valueOf(role);
     }
 }
 

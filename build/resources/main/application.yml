@@ -22,8 +22,10 @@ spring:
     type: redis
 
 jwt:
-  key: ${JWT_SECRET_KEY}
-  accessExp: ${JWT_ACCESS_EXP} #JWT 만료 시간
+  accessExp: ${JWT_ACCESS_EXP}
+  jwt-secret:  ${JWT_SECRET_KEY}
+  header: ${HEADER}
+  prefix: ${PREFIX}
 
 server:
   servlet:

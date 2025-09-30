@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, String> {
-    boolean existsByLoginId(String loginId); // userId 기준으로 중복 체크
+public interface UserRepository extends JpaRepository<User, Long>{
+    boolean existsByLoginId(String loginId); // loginId 기준으로 중복 체크 제발 loginId로 수정해줘ㅜㅜㅜ
     Optional<User> findByLoginId(String loginId);
 }
 

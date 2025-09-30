@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class UserFacade {
     private final UserRepository userRepository;
-    private final JwtProvider jwtProvider;
 
     private String getCurrentLoginId() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
