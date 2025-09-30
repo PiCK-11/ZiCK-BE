@@ -23,11 +23,11 @@ public class UserFacade {
     }
 
     public User getCurrentUser() {
-        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
-        return getUserById(userId);
+        String loginId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return getUserByLoginId(loginId);
     }
 
-    public User getUserById(String userId) {
-        return userRepository.findById(userId).orElseThrow(() -> UserNotFoundException.EXCEPTION);
+    public User getUserByLoginId(String loginId) {
+        return userRepository.findById(loginId).orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
 }
