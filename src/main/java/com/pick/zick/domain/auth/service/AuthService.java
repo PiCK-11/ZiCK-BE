@@ -33,17 +33,17 @@ public class AuthService {
 
         // 3) 저장
         User user = User.builder()
-                .userId(req.userId())
+                .loginId(req.userId())
                 .name(req.name())
                 .password(passwordEncoder.encode(req.password()))
                 .build();
         userRepository.save(user);
 
         // 4) JWT 발급
-        String token = jwtProvider.generateToken(user.getUserId());
+        String token = jwtProvider.generateToken(user.getLoginId());
 
         // 5) 응답
-        return SignupResponse.ok(user.getUserId());
+        return SignupResponse.ok(user.getLoginId());
     }
 
     /** 로그인 **/
@@ -58,9 +58,9 @@ public class AuthService {
         }
 
         // 3) JWT발급
-        String token = jwtProvider.generateToken(user.getUserId());
+        String token = jwtProvider.generateToken(user.getLoginId());
 
         // 4) 응답
-        return LoginResponse.ok(user.getUserId(), token);
+        return LoginResponse.ok(user.getLoginId(), token);
     }
 }

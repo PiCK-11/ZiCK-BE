@@ -1,6 +1,7 @@
 package com.pick.zick.domain.user.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
@@ -12,7 +13,10 @@ import org.hibernate.annotations.DynamicUpdate;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String userId; // PK
+    private String id; // PK
+
+    @Column(nullable = false, unique = true)
+    private String loginId;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -34,5 +38,12 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Builder
+    public User(String loginId, String name, String password) {
+        this.loginId = loginId;
+        this.name = name;
+        this.password = password;
+    }
 }
 
