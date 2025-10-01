@@ -1,6 +1,7 @@
 package com.pick.zick.global.exception;
 
-public class UserIdAlreadyExistsException extends RuntimeException {
-    public static final UserIdAlreadyExistsException EXCEPTION = new UserIdAlreadyExistsException();
-    private UserIdAlreadyExistsException(){ super("이미 가입된 아이디입니다"); }
+public class UserIdAlreadyExistsException extends BusinessException {
+    public UserIdAlreadyExistsException() {
+        super(ErrorCode.USER_ID_ALREADY_EXISTS);
+    }
 }
