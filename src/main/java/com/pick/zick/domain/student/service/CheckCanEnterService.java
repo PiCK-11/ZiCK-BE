@@ -1,6 +1,7 @@
 package com.pick.zick.domain.student.service;
 
 import com.pick.zick.domain.student.dto.CheckCanEnterResponse;
+import com.pick.zick.domain.student.exception.KeyNotFoundException;
 import com.pick.zick.domain.student.repository.AttendanceLogRepository;
 import com.pick.zick.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,8 @@ public class CheckCanEnterService {
     public CheckCanEnterResponse execute(String key){
         String studentIdStr = redisTemplate.opsForValue().get(key);
         if(studentIdStr == null){
-            //CustomException
+            throw KeyNotFoundException.EXCEPTION;
         }
+
     }
 }
