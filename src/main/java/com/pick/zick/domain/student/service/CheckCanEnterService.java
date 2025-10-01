@@ -1,8 +1,10 @@
 package com.pick.zick.domain.student.service;
 
 import com.pick.zick.domain.student.dto.CheckCanEnterResponse;
+import com.pick.zick.domain.student.entity.MealType;
 import com.pick.zick.domain.student.exception.KeyNotFoundException;
 import com.pick.zick.domain.student.repository.AttendanceLogRepository;
+import com.pick.zick.domain.user.exception.UserNotFoundException;
 import com.pick.zick.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -22,6 +24,9 @@ public class CheckCanEnterService {
         if(studentIdStr == null){
             throw KeyNotFoundException.EXCEPTION;
         }
+        Long studentId = Long.valueOf(studentIdStr);
 
+        Boolean applied = userRepository.findById(studentId).orElseThrow(() -> UserNotFoundException.EXCEPTION).getApplied();
+        boolean status = applied != null && applied; //신청 시 true, 아니면 false
     }
 }
