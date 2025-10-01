@@ -9,9 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @ConfigurationPropertiesScan
 public class ZickApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ZickApplication.class, args);
     }
-
 }
