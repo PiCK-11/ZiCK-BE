@@ -7,4 +7,5 @@ import lombok.Getter;
 @AllArgsConstructor
 public class CheckCanEnterResponse {
     private final boolean canEnter;
+    private final String loginId;
 }

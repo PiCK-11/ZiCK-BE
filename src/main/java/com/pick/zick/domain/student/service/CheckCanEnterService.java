@@ -1,11 +1,14 @@
 package com.pick.zick.domain.student.service;
 
 import com.pick.zick.domain.student.dto.CheckCanEnterResponse;
+import com.pick.zick.domain.student.entity.AttendanceLog;
 import com.pick.zick.domain.student.entity.MealType;
 import com.pick.zick.domain.student.exception.KeyNotFoundException;
 import com.pick.zick.domain.student.repository.AttendanceLogRepository;
+import com.pick.zick.domain.user.entity.User;
 import com.pick.zick.domain.user.exception.UserNotFoundException;
 import com.pick.zick.domain.user.repository.UserRepository;
+import com.pick.zick.global.util.MealTypeUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -27,6 +30,18 @@ public class CheckCanEnterService {
         Long studentId = Long.valueOf(studentIdStr);
 
         Boolean applied = userRepository.findById(studentId).orElseThrow(() -> UserNotFoundException.EXCEPTION).getApplied();
+        String loginId = userRepository.findById(studentId).orElseThrow(() -> UserNotFoundException.EXCEPTION).getLoginId();
         boolean status = applied != null && applied; //신청 시 true, 아니면 false
+
+        MealType mealType = MealTypeUtil.getCurrentMealType();
+
+        User user = userRepository.findById(studentId).orElseThrow(() -> UserNotFoundException.EXCEPTION);
+
+        AttendanceLog log = new AttendanceLog(user, mealType, status);
+        attendanceLogRepository.save(log);
+
+        //출입 성공 시 verified를 true로 변경하는 코드 작성
+
+        return new CheckCanEnterResponse(status, loginId);
     }
 }
