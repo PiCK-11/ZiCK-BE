@@ -5,7 +5,7 @@ import jakarta.validation.constraints.*;
 public record SignupRequest(
         @Pattern(regexp = "^[A-Za-z0-9]{1,16}$",
                 message = "아이디는 영문자+숫자 조합 16자 이내여야 합니다.")
-        String userId,
+        String loginId,
 
         @NotBlank(message = "이름은 필수입니다.")
         @Size(max = 30, message = "이름은 30자 이하여야 합니다.")

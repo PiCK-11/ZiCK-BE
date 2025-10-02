@@ -14,8 +14,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class User {
     @Id
-    private String userId;   // PK
-    private String name;
+    private String loginId;   // PK
+    private String userName;
     private String password;
+    private Integer studentNumber;
+
+    @Builder.Default
+    private boolean verified = false;
+
+    public void updateProfile(String name, String password) {
+        if (name != null && !name.isBlank()) {
+            this.userName = name;
+        }
+        if (password != null && !password.isBlank()) {
+            this.password = password;
+        }
+    }
 }
 

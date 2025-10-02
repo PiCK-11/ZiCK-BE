@@ -22,7 +22,7 @@ public class AuthService {
     /** 회원가입**/
     public SignupResponse signup(SignupRequest req) {
         // 1) 아이디 중복
-        if (userRepository.existsById(req.userId())) {
+        if (userRepository.existsById(req.loginId())) {
             throw new IllegalStateException("이미 가입된 아이디입니다");
         }
 
@@ -33,23 +33,23 @@ public class AuthService {
 
         // 3) 저장
         User user = User.builder()
-                .userId(req.userId())
-                .name(req.name())
+                .loginId(req.loginId())
+                .userName(req.name())
                 .password(passwordEncoder.encode(req.password()))
                 .build();
         userRepository.save(user);
 
         // 4) JWT 발급
-        String token = jwtProvider.generateToken(user.getUserId());
+        String token = jwtProvider.generateToken(user.getloginId());
 
         // 5) 응답
-        return SignupResponse.ok(user.getUserId());
+        return SignupResponse.ok(user.getloginId());
     }
 
     /** 로그인 **/
     public LoginResponse login(LoginRequest req) {
         // 1) 사용자 조회
-        User user = userRepository.findById(req.userId())
+        User user = userRepository.findById(req.loginId())
                 .orElseThrow(() -> new IllegalStateException("존재하지 않는 아이디입니다."));
 
         // 2) 비밀번호 검증
@@ -61,6 +61,6 @@ public class AuthService {
         String token = jwtProvider.generateToken(user.getUserId());
 
         // 4) 응답
-        return LoginResponse.ok(user.getUserId(), token);
+        return LoginResponse.ok(user.getloginId(), token);
     }
 }
