@@ -36,13 +36,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Builder
-    public User(String loginId, String userName, String password, String studentNumber, String role) {
-        this.loginId = loginId;
-        this.userName = userName;
-        this.password = password;
-        this.studentNumber = studentNumber;
-        this.role = Role.valueOf(role);
+    public void updateVerified(Boolean verified) {
+        this.verified = verified;
     }
 }
 
