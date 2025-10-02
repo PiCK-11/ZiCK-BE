@@ -29,7 +29,7 @@ public class StudentController {
         return checkCanEnterService.execute(checkCanEnterRequest.getKey());
     }
 
-    @GetMapping("/attendance/excel")
+    @GetMapping("/attendances/excel")
     public ExcelResponse getAttendanceExcel() throws IOException {
         return attendanceExcelService.generateExcel();
     }
