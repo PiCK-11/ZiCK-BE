@@ -42,7 +42,9 @@ public class CheckCanEnterService {
         AttendanceLog log = new AttendanceLog(user, mealType, status);
         attendanceLogRepository.save(log);
 
-        //출입 성공 시 verified를 true로 변경하는 코드 작성
+        if (status) {
+            user.updateVerified(true);
+        }
 
         return new CheckCanEnterResponse(status, loginId);
     }
